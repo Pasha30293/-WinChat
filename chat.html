@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="WinChat — современный мессенджер."
+    >
+
+    <title>WinChat</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body class="chat-page">
+
+
+    <!-- APP -->
+
+    <div class="messenger">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="messenger-sidebar">
+
+
+            <!-- LOGO -->
+
+            <div class="messenger-logo">
+
+                <div class="logo-icon">
+                    W
+                </div>
+
+                <span>
+                    WinChat
+                </span>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <span>
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    placeholder="Поиск"
+                    id="chatSearch"
+                >
+
+            </div>
+
+
+            <!-- CHAT LIST -->
+
+            <div class="chat-list">
+
+
+                <div
+                    class="chat-list-item active"
+                    data-chat="alex"
+                >
+
+                    <div class="chat-avatar blue">
+                        А
+                    </div>
+
+                    <div class="chat-preview">
+
+                        <strong>
+                            Алекс
+                        </strong>
+
+                        <span>
+                            Привет! 👋
+                        </span>
+
+                    </div>
+
+                    <time>
+                        14:34
+                    </time>
+
+                </div>
+
+
+                <div
+                    class="chat-list-item"
+                    data-chat="friends"
+                >
+
+                    <div class="chat-avatar purple">
+                        Д
+                    </div>
+
+                    <div class="chat-preview">
+
+                        <strong>
+                            Друзья
+                        </strong>
+
+                        <span>
+                            Илья: Вечером играем?
+                        </span>
+
+                    </div>
+
+                    <time>
+                        13:21
+                    </time>
+
+                </div>
+
+
+                <div
+                    class="chat-list-item"
+                    data-chat="work"
+                >
+
+                    <div class="chat-avatar green">
+                        Р
+                    </div>
+
+                    <div class="chat-preview">
+
+                        <strong>
+                            Работа
+                        </strong>
+
+                        <span>
+                            Новый проект готов
+                        </span>
+
+                    </div>
+
+                    <time>
+                        11:48
+                    </time>
+
+                </div>
+
+
+                <div
+                    class="chat-list-item"
+                    data-chat="team"
+                >
+
+                    <div class="chat-avatar orange">
+                        W
+                    </div>
+
+                    <div class="chat-preview">
+
+                        <strong>
+                            WinChat Team
+                        </strong>
+
+                        <span>
+                            Добро пожаловать!
+                        </span>
+
+                    </div>
+
+                    <time>
+                        Вчера
+                    </time>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+                <button>
+                    ⚙️
+                    Настройки
+                </button>
+
+                <button>
+                    👤
+                    Профиль
+                </button>
+
+            </div>
+
+
+        </aside>
+
+
+        <!-- CHAT -->
+
+        <main class="conversation">
+
+
+            <!-- CHAT HEADER -->
+
+            <header class="conversation-header">
+
+                <div class="conversation-user">
+
+                    <div class="chat-avatar blue">
+                        А
+                    </div>
+
+                    <div>
+
+                        <strong id="currentUser">
+                            Алекс
+                        </strong>
+
+                        <span id="currentStatus">
+                            в сети
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="conversation-actions">
+
+                    <button
+                        title="Позвонить"
+                    >
+                        📞
+                    </button>
+
+                    <button
+                        title="Видеозвонок"
+                    >
+                        📹
+                    </button>
+
+                    <button
+                        title="Информация"
+                    >
+                        ⓘ
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- MESSAGES -->
+
+            <div
+                class="conversation-messages"
+                id="messages"
+            >
+
+                <div class="message-row received">
+
+                    <div class="message">
+
+                        Привет! 👋
+
+                        <time>
+                            14:32
+                        </time>
+
+                    </div>
+
+                </div>
+
+
+                <div class="message-row received">
+
+                    <div class="message">
+
+                        Как тебе новый WinChat?
+
+                        <time>
+                            14:33
+                        </time>
+
+                    </div>
+
+                </div>
+
+
+                <div class="message-row sent">
+
+                    <div class="message">
+
+                        Выглядит отлично! 🔥
+
+                        <time>
+                            14:34
+                        </time>
+
+                    </div>
+
+                </div>
+
+
+                <div class="message-row sent">
+
+                    <div class="message">
+
+                        Особенно дизайн Windows 11.
+
+                        <time>
+                            14:34
+                        </time>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INPUT -->
+
+            <form
+                class="message-form"
+                id="messageForm"
+            >
+
+                <button
+                    type="button"
+                    class="attach-button"
+                    title="Прикрепить файл"
+                >
+                    📎
+                </button>
+
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Написать сообщение..."
+                    autocomplete="off"
+                >
+
+
+                <button
+                    type="submit"
+                    class="send-button"
+                    title="Отправить"
+                >
+                    ➤
+                </button>
+
+            </form>
+
+
+        </main>
+
+    </div>
+
+
+    <script>
+
+        /* =========================
+           SEND MESSAGE
+        ========================= */
+
+        const form =
+            document.getElementById(
+                "messageForm"
+            );
+
+        const input =
+            document.getElementById(
+                "messageInput"
+            );
+
+        const messages =
+            document.getElementById(
+                "messages"
+            );
+
+
+        form.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const text =
+                    input.value.trim();
+
+
+                if (!text) {
+                    return;
+                }
+
+
+                const row =
+                    document.createElement(
+                        "div"
+                    );
+
+                row.className =
+                    "message-row sent";
+
+
+                const message =
+                    document.createElement(
+                        "div"
+                    );
+
+                message.className =
+                    "message";
+
+
+                const messageText =
+                    document.createTextNode(
+                        text
+                    );
+
+
+                const time =
+                    document.createElement(
+                        "time"
+                    );
+
+
+                time.textContent =
+                    getCurrentTime();
+
+
+                message.appendChild(
+                    messageText
+                );
+
+                message.appendChild(
+                    time
+                );
+
+                row.appendChild(
+                    message
+                );
+
+                messages.appendChild(
+                    row
+                );
+
+
+                input.value = "";
+
+
+                scrollMessages();
+
+
+                /* Demo response */
+
+                setTimeout(
+                    () => {
+
+                        addReply();
+
+                    },
+                    900
+                );
+
+            }
+        );
+
+
+        /* =========================
+           CURRENT TIME
+        ========================= */
+
+        function getCurrentTime() {
+
+            const now =
+                new Date();
+
+
+            return now.toLocaleTimeString(
+                "ru-RU",
+                {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            );
+
+        }
+
+
+        /* =========================
+           DEMO REPLY
+        ========================= */
+
+        function addReply() {
+
+            const replies = [
+
+                "Интересно! 😎",
+
+                "Согласен!",
+
+                "Да, WinChat выглядит круто 🔥",
+
+                "Скоро добавим ещё больше функций!",
+
+                "Отлично! 👍"
+
+            ];
+
+
+            const randomReply =
+                replies[
+                    Math.floor(
+                        Math.random()
+                        * replies.length
+                    )
+                ];
+
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+            row.className =
+                "message-row received";
+
+
+            const message =
+                document.createElement(
+                    "div"
+                );
+
+            message.className =
+                "message";
+
+
+            const text =
+                document.createTextNode(
+                    randomReply
+                );
+
+
+            const time =
+                document.createElement(
+                    "time"
+                );
+
+            time.textContent =
+                getCurrentTime();
+
+
+            message.appendChild(text);
+
+            message.appendChild(time);
+
+            row.appendChild(message);
+
+            messages.appendChild(row);
+
+
+            scrollMessages();
+
+        }
+
+
+        /* =========================
+           SCROLL
+        ========================= */
+
+        function scrollMessages() {
+
+            messages.scrollTop =
+                messages.scrollHeight;
+
+        }
+
+
+        /* =========================
+           CHAT SWITCHING
+        ========================= */
+
+        const chatItems =
+            document.querySelectorAll(
+                ".chat-list-item"
+            );
+
+
+        const currentUser =
+            document.getElementById(
+                "currentUser"
+            );
+
+
+        chatItems.forEach(item => {
+
+            item.addEventListener(
+                "click",
+                () => {
+
+                    chatItems.forEach(
+                        chat => {
+
+                            chat.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    item.classList.add(
+                        "active"
+                    );
+
+
+                    const name =
+                        item.querySelector(
+                            "strong"
+                        ).textContent;
+
+
+                    currentUser.textContent =
+                        name;
+
+
+                    messages.innerHTML = "";
+
+
+                    addDemoMessage(
+                        "Привет! 👋",
+                        "received"
+                    );
+
+                }
+            );
+
+        });
+
+
+        function addDemoMessage(
+            text,
+            type
+        ) {
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+            row.className =
+                `message-row ${type}`;
+
+
+            const message =
+                document.createElement(
+                    "div"
+                );
+
+            message.className =
+                "message";
+
+
+            const textNode =
+                document.createTextNode(
+                    text
+                );
+
+
+            const time =
+                document.createElement(
+                    "time"
+                );
+
+            time.textContent =
+                getCurrentTime();
+
+
+            message.appendChild(
+                textNode
+            );
+
+            message.appendChild(
+                time
+            );
+
+
+            row.appendChild(
+                message
+            );
+
+            messages.appendChild(
+                row
+            );
+
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        const search =
+            document.getElementById(
+                "chatSearch"
+            );
+
+
+        search.addEventListener(
+            "input",
+            () => {
+
+                const query =
+                    search.value.toLowerCase();
+
+
+                chatItems.forEach(item => {
+
+                    const name =
+                        item.querySelector(
+                            "strong"
+                        ).textContent
+                        .toLowerCase();
+
+
+                    item.style.display =
+                        name.includes(query)
+                        ? "flex"
+                        : "none";
+
+                });
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
