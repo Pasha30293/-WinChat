@@ -130,3 +130,4 @@ if (year) {
         new Date().getFullYear();
 
 }
+<link rel="stylesheet" href="style.css">
